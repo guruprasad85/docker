@@ -24,8 +24,18 @@ tar -xf OCSNG_UNIX_SERVER-2.2.tar.gz
 chown -R www-data:www-data /var/www/html
 chown -R www-data:www-data /usr/share/ocsinventory-reports/
 
-
-
-
-
 service apache2 restart
+
+sh setup.sh
+
+#When script will ask about main apache conf file. If you didn’t change anything paste this:/etc/apache2/apache2.conf*
+#When script checks: Checking for Apache Include configuration directory…, paste this: /etc/apache2/sites-enabled*
+#Script will ask if you want to use SOAP extensions and more likely report that libraries are missing. Just continue.
+
+#change ocs@localhost password
+#nano /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php
+#nano /etc/apache2/sites-enabled/z-ocsinventory-server.conf
+#rm /usr/share/ocsinventory-reports/ocsreports/install.php
+
+
+
